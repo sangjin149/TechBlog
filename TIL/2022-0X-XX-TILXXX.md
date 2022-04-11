@@ -1,4 +1,4 @@
-# TIL-22/XX/XX
+# TIL-22/XX/XX X요일
 
 ## :white_check_mark: 오늘의 할 일
 
