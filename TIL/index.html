@@ -1,0 +1,40 @@
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+    <div id="app">
+        <div>{{ fullName }}</div>
+        <div>{{ firstName }}</div>
+        <div>{{ lastName }}</div>
+    </div>
+    <script>
+        const App = {
+            data() {
+                return {
+                    firstName: 'Leon',
+                    lastName: 'Lee',
+                }
+            },
+            computed: {
+                fullName: {
+                    get() {
+                        return `${this.firstName} ${this.lastName}`
+                    },
+                    set(newValue) {
+                        console.log(newValue)
+                        const names = newValue.split(' ')
+                        this.firstName = names[0]
+                        this.lastName = names[1]
+                    }
+                }
+            },
+        }
+        const vm = Vue.createApp(App).mount('#app')
+    </script>
+</body>
+</html>
